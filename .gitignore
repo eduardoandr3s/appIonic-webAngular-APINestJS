@@ -1,0 +1,31 @@
+# Ignorar node_modules en todos los proyectos
+**/node_modules/
+
+# Ignorar carpetas de compilación y caché
+**/dist/
+**/.angular/
+**/.cache/
+**/.idea/
+**/.vscode/
+
+# Ignorar archivos de entorno (variables de entorno sensibles)
+**/.env
+**/.env.local
+**/.env.development
+**/.env.production
+
+# Ignorar archivos de configuración local
+**/config/local.json
+**/config/local.yml
+
+# Ignorar archivos de logs
+**/*.log
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar carpetas específicas de Ionic
+**/platforms/
+**/plugins/
+**/www/
