@@ -1,0 +1,79 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button  color="danger" >
+        <ion-icon size="large" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">
+      <ion-buttons class="center-button">
+        <ion-avatar routerLink="/tabs/inicio">
+          <ion-img src="assets/icon/img.png"></ion-img>
+        </ion-avatar>
+      </ion-buttons>
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-menu-button menu="miMenu" color="danger">
+      </ion-menu-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+@defer (when displayedSeries) {
+  <ion-content>
+    <ion-list class="ion-margin">
+
+      @for (i of displayedSeries; track $index) {
+          <ion-card color="light" class="hover-card" routerLink="/tabs/detalle/{{i._id}}">
+            <ion-card-title class="ion-padding">{{i.title}}</ion-card-title>
+            <ion-img src="{{i.images[0]}}"></ion-img>
+
+
+            @for (cat of i.categories;track cat){
+              <ion-chip>
+                <ion-avatar>
+                  <ion-img src="{{cat.image}}"></ion-img>
+                </ion-avatar>
+              <ion-label >{{ cat.category }}</ion-label>
+              </ion-chip>
+            }
+
+
+            <div class="hover-info">
+              Title: {{i.title}} <br>
+              Date of issue: {{i.releaseDate | date: 'yyyy/MM/dd'}} <br>
+              Number of episodes: {{i.numberOfEpisodes}}
+            </div>
+          </ion-card>
+        }
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="warning">
+        <ion-icon name="chevron-down-circle-sharp"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button color="danger" routerLink="/tabs/buscador">
+          <ion-icon name="search-sharp"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </ion-content>
+} @placeholder () {
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border text-danger" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+}
+
+

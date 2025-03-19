@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<ion-content>
+
+  <swiper-container [slidesPerView]="3.5"
+                    [separator]="5">
+    @for (a of dataCategories; track $index) {
+      <swiper-slide routerLink="/tabs/categories/{{a._id}}">
+        <ion-avatar class="ion-avatar" [ngClass]="{'selected': avatarSelectedId === a._id}">
+          <ion-img src="{{a.image}}"></ion-img>
+        </ion-avatar>
+        <ion-label><p class="ion-text-center">{{ a.category }}</p></ion-label>
+      </swiper-slide>
+
+    }
+
+  </swiper-container>
+
+  <ion-list class="ion-margin">
+    @for (i of displayedSeries; track $index) {
+      <ion-card color="light" class="hover-card" routerLink="/tabs/detalle/{{i._id}}">
+        <ion-img src="{{i.images[0]}}"></ion-img>
+        <div class="hover-info">
+          <ion-label style="margin: 5px">{{ i.title }} </ion-label>
+        </div>
+      </ion-card>
+    }
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="warning">
+      <ion-icon name="chevron-down-circle-sharp"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+            <ion-fab-button color="danger" routerLink="/tabs/buscador">
+        <ion-icon name="search-sharp"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>
+
+

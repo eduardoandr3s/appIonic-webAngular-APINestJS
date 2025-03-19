@@ -1,0 +1,270 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      @if (edit) {
+        <h3>Serie Edit {{ title.value }}</h3>
+      } @else {
+        <h3>Add new serie</h3>
+      }
+    </div>
+    <div class="col-md-4 offset-md-2">
+      <form [formGroup]="formSerie">
+
+        <!--        campo del titulo-->
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control"
+                 id="title"
+                 formControlName="title"
+                 placeholder="title">
+          <label for="title">Title</label>
+          @if (title.invalid && (title.dirty || title.touched)) {
+            <div class="alert alert-danger">
+              @if (title.errors['required']) {
+                The title is compulsory
+              }
+              @if (title.errors['minlength']) {
+                Minimum 2 characters
+              }
+              @if (title.errors['maxlength']) {
+                Maximum 255 characters
+              }
+              @if (title.errors['notOnlyWhiteSpace']) {
+                They cannot just be blanks
+              }
+              @if (title.errors['forbiddenName']) {
+                the words SEX, DRUGS, WHORE, BASTARD and ASSHOLE are forbidden.
+              }
+            </div>
+          }
+        </div>
+
+
+        <!--        campo para las imagenes-->
+
+        <div formArrayName="images">
+
+          @for (i of images.controls; track $index) {
+            <div class="row">
+
+              <div class="col-md-8">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control"
+                         [id]="'image' + $index"
+                         [formControlName]="$index"
+                         placeholder="Image URL">
+                  <label [for]="'image' + $index">Image {{ $index + 1 }}</label>
+                </div>
+
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-danger mt-1" (click)="removeImage($index)">
+                  Delete
+                </button>
+              </div>
+
+            </div>
+
+            @if (images.at($index).invalid && isControlTouchedOrDirty(images.at($index))) {
+              <div class="alert alert-danger">
+                @if (images.at($index).errors?.['required']) {
+                  The image is obligatory
+                }
+                @if (images.at($index).errors?.['minlength']) {
+                  Minimum 5 characters
+                }
+                @if (images.at($index).errors?.['maxlength']) {
+                  Maximum 255 characters
+                }
+              </div>
+            }
+
+          }
+
+          <button type="button" class="btn btn-success" style="margin-bottom: 10px" (click)="addImage()">
+            Add Image
+          </button>
+        </div>
+
+
+        <!--        campo para el num de episodios-->
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control"
+                 id="numberOfEpisodes"
+                 formControlName="numberOfEpisodes"
+                 placeholder="numberOfEpisodes">
+          <label for="numberOfEpisodes">Number of Episodes</label>
+          @if (numberOfEpisodes.invalid && (numberOfEpisodes.dirty || numberOfEpisodes.touched)) {
+            <div class="alert alert-danger">
+              @if (numberOfEpisodes.errors['required']) {
+                The number of episodes is mandatory
+              }
+              @if (numberOfEpisodes.errors['minlength']) {
+                Minimum 1 character
+              }
+              @if (numberOfEpisodes.errors['maxlength']) {
+                Maximum 5 characters
+              }
+              @if (numberOfEpisodes.errors['pattern']) {
+                Only numbers are allowed
+              }
+            </div>
+          }
+        </div>
+
+        <!--            campo para la sinopsis-->
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control"
+                 id="synopsis"
+                 formControlName="synopsis"
+                 placeholder="synopsis">
+          <label for="synopsis">Sinopsis</label>
+          @if (synopsis.invalid && (synopsis.dirty || synopsis.touched)) {
+            <div class="alert alert-danger">
+              @if (synopsis.errors['required']) {
+                The synopsis is mandatory
+              }
+              @if (synopsis.errors['minlength']) {
+                Minimum 20 characters
+              }
+              @if (synopsis.errors['maxlength']) {
+                Maximum 1000 characters
+              }
+
+            </div>
+          }
+        </div>
+
+        <!--        campo para la fecha de emision-->
+        <div class="form-floating mb-3">
+          <input type="date" class="form-control"
+                 id="releaseDate"
+                 formControlName="releaseDate"
+                 placeholder="releaseDate">
+          <label for="releaseDate">Fecha Emisión</label>
+          @if (releaseDate.invalid && (releaseDate.dirty || releaseDate.touched)) {
+            <div class="alert alert-danger">
+              @if (releaseDate.errors['required']) {
+                The date of issue is mandatory
+              }
+              @if (releaseDate.errors['minlength']) {
+                Minimum 8 characters
+              }
+              @if (releaseDate.errors['maxlength']) {
+                Maximum 10 characters
+              }
+            </div>
+          }
+        </div>
+
+
+        <!--        campo para las categorias-->
+
+
+        <div class="container">
+          <div class="row justify-content-start">
+            <div class="col-md-12">
+              <form [formGroup]="formSerie">
+                <div formArrayName="categories">
+                  @for (category of categories.controls; track $index) {
+                    <div [formGroupName]="$index" class="form-floating mb-3 border p-2 rounded">
+                      <div class="row">
+                        <div class="col-md-10">
+                          <select id="select" class="form-select"
+                                  (change)="onCategoryChange($index)"
+                                  formControlName="selectedCategory">
+                            <option [ngValue]="null" disabled>Select a Category</option>
+                            @for (option of categoriesList; track option._id) {
+                              <option [ngValue]="option._id">
+                                {{ option.category }}
+                              </option>
+                            }
+                          </select>
+                          <label for="select">Category</label>
+                        </div>
+
+
+                          <div class="col-md-2">
+                            <button type="button" class="btn btn-danger" (click)="deleteCategory($index)" [disabled]="categories.controls.length == 1">Delete</button>
+                          </div>
+
+
+
+                      </div>
+                    </div>
+                  }
+                </div>
+                <div class="d-flex">
+                  <button type="button" class="btn btn-success" style="margin-right: 10px" (click)="addCategory()">Add Category</button>
+                  <button type="button"  class="btn btn-success" style="margin-left: 10px" (click)="openCategoryModal()">Create New Category</button>
+                </div>
+
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+
+        <!--        ternario para button en base a variable bool edit:  true = editar, false = añadir-->
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-outline-success" style="margin: 15px" (click)="onSubmit()">
+            {{ edit ? 'EDIT' : 'ADD' }}
+          </button>
+        </div>
+      </form>
+    </div>
+
+
+    <!--    titulo de la card-->
+    <div class="col-md-4 col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <h2>{{ title.value ? title.value : 'Título' }}
+            </h2>
+          </div>
+          <div class="card-subtitle">
+            @if (categories.value) {
+              @for (cat of categories.value; track cat) {
+                {{ cat.category ? cat.category : 'categories' }}
+              }
+            }
+
+          </div>
+        </div>
+
+
+        <!--        imagen de la card-->
+
+        <img src="{{images.value ? images.value[0] : '/images/not-found-img.png'}}" alt="" class="card-img-top">
+
+
+        <!--        sinopsis en la card-->
+        <div class="card-body">
+          <p class="card-text">{{ synopsis.value ? synopsis.value : 'synopsis' }}</p>
+        </div>
+
+
+        <div class="card-footer">
+          <div class="d-flex justify-content-between">
+
+            <!--            fecha de emision en card-->
+            <p class="text-muted">
+              {{ releaseDate.value | date: 'dd/MM/yyyy' }}</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    @if (toastShow) {
+      <ngb-toast class="toast-container position-fixed
+      {{toast.color}} text-light bottom-10 start-50 p-1" style="z-index: 1200"
+      >{{ toast.body }}
+      </ngb-toast>
+    }
+
+  </div>
+</div>

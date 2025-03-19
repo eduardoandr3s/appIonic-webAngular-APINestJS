@@ -1,0 +1,118 @@
+<app-header></app-header>
+
+<ion-content>
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="warning">
+      <ion-icon name="chevron-down-circle-sharp"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="danger" href="https://www.facebook.com/" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="danger" href="https://www.x.com/" target="_blank">
+        <ion-icon name="logo-x"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="danger" href="https://www.youtube.com/" target="_blank">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button color="danger" href="https://www.tiktok.com/" target="_blank">
+        <ion-icon name="logo-tiktok"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="danger" href="https://www.instagram.com/" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="danger" href="https://www.github.com/" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+  @defer (when serie) {
+    <ion-card>
+      <ion-card-title class="ion-padding">
+        {{ serie.title }}
+      </ion-card-title>
+      <swiper-container [slidesPerView]="1"
+                        [separator]=10>
+
+        @for (img of serie.images; track $index) {
+          <swiper-slide>
+            <ion-img src="{{serie.images[$index]}}"></ion-img>
+          </swiper-slide>
+        }
+
+
+
+      </swiper-container>
+      <ion-grid>
+
+        <ion-label class="ion-margin-top ion-padding"> Synopsis: {{ serie.synopsis }}</ion-label>
+        <br>
+        <ion-label> Episodes: {{ serie.numberOfEpisodes }}</ion-label>
+        <br>
+
+        @for (cat of serie.categories; track $index) {
+          <ion-chip color="primary">
+            <ion-avatar>
+              <ion-img src="{{cat.image}}"></ion-img>
+            </ion-avatar>
+            <ion-label>{{ cat.category }}</ion-label>
+          </ion-chip>
+        }
+
+        <br>
+        <ion-label>Emision Date: {{ serie.releaseDate | date: "yyyy/MM/dd" }}</ion-label>
+        <br>
+
+
+          <ion-item>
+            <ion-label>Punctuation:</ion-label>
+            <ion-badge color="danger">{{updatePunctuationLabel | number: '0.0-2'}}</ion-badge>
+          </ion-item>
+
+
+        <ion-button color="danger" id="open-modal" expand="block">Open Modal</ion-button>
+      </ion-grid>
+
+      <ion-modal #modal trigger="open-modal">
+        <ng-template>
+          <ion-content>
+            <ion-toolbar>
+              <ion-title>Email and Punctuation</ion-title>
+              <ion-buttons slot="end">
+                <ion-button color="danger" (click)="modal.dismiss()">Close</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+
+
+            <ion-list class="ion-padding">
+              <ion-input type="email" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                         [(ngModel)]="myPunctuation.email" label="Email" labelPlacement="floating"
+                         errorText="Email inválido"
+                         required="true"></ion-input>
+              <ion-item>
+
+                <ion-range aria-label="Range with ticks" [pin]="true" [ticks]="true" [snaps]="true" [min]="1" [max]="10" (ionChange)="savePunctuation($event)"></ion-range>
+
+                         </ion-item>
+              <ion-buttons slot="end">
+                <ion-button color="danger"  (click)="sendPunctuation(serie)">Send</ion-button>
+              </ion-buttons>
+            </ion-list>
+
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
+    </ion-card>
+
+
+  } @placeholder () {
+    <ion-loading/>
+  }
+</ion-content>

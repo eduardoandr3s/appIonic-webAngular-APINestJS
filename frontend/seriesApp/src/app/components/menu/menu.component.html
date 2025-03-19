@@ -1,0 +1,50 @@
+<ion-menu side="end" menuId="miMenu" contentId="main-content">
+  <ion-header class="ion-padding">
+    <ion-title color="danger" class="ion-text-center">Menú Categorías</ion-title>
+  </ion-header>
+  <ion-content>
+
+
+      <ion-list>
+
+        @for (i of dataCategories; track i){
+          <ion-menu-toggle>
+            <ion-item routerLink="/tabs/categories/{{i._id}}">
+<ion-buttons class="ion-margin-bottom ion-margin-top">
+  <ion-button>
+    <ion-avatar>
+      <ion-img src="{{i.image}}">aaa</ion-img>
+    </ion-avatar>
+  </ion-button>
+  <ion-label class="ion-text-lg-center">
+    {{i.category}}
+
+  </ion-label>
+</ion-buttons>
+
+            </ion-item>
+
+          </ion-menu-toggle>
+        }
+      </ion-list>
+
+
+
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="main-content"></ion-router-outlet>
+
+
+<!--    <ion-grid class="ion-text-center">-->
+<!--      <ion-menu-toggle>-->
+<!--        <ion-button color="danger">Cienca Ficción</ion-button>-->
+<!--      </ion-menu-toggle>-->
+<!--      <ion-menu-toggle>-->
+<!--        <ion-button color="danger">Historia</ion-button>-->
+<!--      </ion-menu-toggle>-->
+<!--      <ion-menu-toggle>-->
+<!--        <ion-button color="danger">Romance</ion-button>-->
+<!--      </ion-menu-toggle>-->
+<!--    </ion-grid>-->
+
+

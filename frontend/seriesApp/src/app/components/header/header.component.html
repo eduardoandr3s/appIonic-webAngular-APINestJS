@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button  color="danger" (click)="volver()">
+        <ion-icon size="large" name="arrow-back-circle-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">
+      <ion-buttons class="center-button">
+        <ion-avatar routerLink="/tabs/inicio">
+          <ion-img  src="assets/icon/img.png"></ion-img>
+        </ion-avatar>
+      </ion-buttons>
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-menu-button menu="miMenu" color="danger">
+      </ion-menu-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>

@@ -1,0 +1,51 @@
+@defer (when infoLoaded) {
+  <div class="container">
+    <div class="row">
+    @for (serie of series; track serie) {
+        <div class="col-lg-3">
+          <div class="card" [id]="'serie-card-' + serie._id">
+              <div [attr.id]="'carouselExample'+serie._id" class="carousel slide">
+                <div class="carousel-inner">
+
+                  @for (img of serie.images; track $index) {
+                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                      <img [src]="img" class="d-block w-100 card-img-top" style="height: 160px" alt="Serie image">
+                    </div>
+                  }
+                </div>
+                <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExample'+serie._id" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExample'+serie._id" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+
+              <h3 class="fw-normal" style="margin-left: 10px">{{serie.title.length>18?(serie.title |slice:0:17)+"...":serie.title}}</h3>
+              <label style="margin-left: 10px"><strong>Episodes:</strong> {{serie.numberOfEpisodes}}</label>
+              <label style="margin-left: 10px"><strong>Release Date:</strong> {{serie.releaseDate| date:"yyyy/MM/dd"}}</label>
+              <label style="margin-left: 10px">{{serie.synopsis.length>60?(serie.synopsis |slice:0:59)+"...":serie.synopsis}}</label>
+
+            <div class="container text-center">
+              <div class="row align-items-start">
+                @for (cat of serie.categories; track $index) {
+                <div class="col-3 category-chip" style="margin-left: 8px">
+                   <img class="chip-img" [src]="cat.image" alt="{{ cat.category }}"/>
+                  <span class="chip-label">{{ cat.category }}</span>
+                </div>
+                }
+              </div>
+            </div>
+
+              <button class="btn btn-success rounded-pill px-3" type="button" [routerLink]="'/series/edit/'+serie._id">Edit Serie</button>
+              <button class="btn btn-danger rounded-pill px-3" type="button" (click)="openConfirmDialog(serie)">Delete Serie</button>
+
+
+          </div>
+        </div>
+    }
+    </div>
+  </div>
+}

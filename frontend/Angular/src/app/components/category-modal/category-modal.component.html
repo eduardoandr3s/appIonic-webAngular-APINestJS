@@ -1,0 +1,21 @@
+
+<div class="modal-header">
+  <h5 class="modal-title">Create New Category</h5>
+  <button type="button" class="btn-close" (click)="dismissModal()"></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="newCategoryForm">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" formControlName="category" placeholder="Nombre">
+      <label>Category Name</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" formControlName="image" placeholder="URL">
+      <label>Image Url</label>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="dismissModal()">Close</button>
+  <button type="button" class="btn btn-primary" (click)="createCategory()">Create</button>
+</div>

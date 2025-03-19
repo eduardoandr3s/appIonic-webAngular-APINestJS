@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a3aa1d35-01aa-422a-a271-2b78880cdd5a" name="Changes" comment="app, web y api listas!!!">
+      <change beforePath="$PROJECT_DIR$/frontend/Angular/src/app/components/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Angular/src/app/components/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/seriesApp/seriesApp/src/app/pages/categoria/categoria.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/seriesApp/seriesApp/src/app/pages/categoria/categoria.page.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/frontend/Angular" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;eduardoandr3s&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/eduardoandr3s/Series-Management-API-Nestjs-Web-Angular-App-Ionic.git&quot;,
+    &quot;accountId&quot;: &quot;f83f0e9e-b13d-43e3-a9c3-0df751cedf2e&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2ra4KbnS3E2BOtLye0QwX2CRd4F" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.menu.component.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/eduar/WebstormProjects/proyectoFinalFran/frontend/ionic/seriesApp/src/assets/icon&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\eduar\\WebstormProjects\\proyectoFinalFran\\frontend\\Angular\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;repository&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\eduar\WebstormProjects\proyectoFinalFran\frontend\ionic\seriesApp\src\assets\icon" />
+      <recent name="C:\Users\eduar\WebstormProjects\proyectoFinalFran\frontend\Angular\public\images" />
+      <recent name="C:\Users\eduar\WebstormProjects\proyectoFinalFran\frontend\ionic\seriesApp\src\assets\img" />
+      <recent name="C:\Users\eduar\WebstormProjects\proyectoFinalFran\frontend\ionic\seriesApp\src\assets\img\avatar" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\eduar\WebstormProjects\proyectoFinalFran" />
+      <recent name="C:\Users\eduar\WebstormProjects\proyectoFinalFran\frontend\seriesApp" />
+      <recent name="C:\Users\eduar\WebstormProjects\proyectoFinalFran\frontend\ionic" />
+      <recent name="C:\Users\eduar\WebstormProjects\proyectoFinalFran\frontend" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3aa1d35-01aa-422a-a271-2b78880cdd5a" name="Changes" comment="" />
+      <created>1736783789129</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736783789129</updated>
+      <workItem from="1736783790259" duration="11159000" />
+      <workItem from="1736880360252" duration="3032000" />
+      <workItem from="1736933015439" duration="20291000" />
+      <workItem from="1737023833021" duration="1008000" />
+      <workItem from="1737026328692" duration="11000" />
+      <workItem from="1737462019984" duration="623000" />
+      <workItem from="1737569915720" duration="5781000" />
+      <workItem from="1737716441791" duration="599000" />
+      <workItem from="1737717072795" duration="4672000" />
+      <workItem from="1737740832593" duration="2120000" />
+      <workItem from="1737891477334" duration="16026000" />
+      <workItem from="1737964026378" duration="1129000" />
+      <workItem from="1737975742912" duration="1872000" />
+      <workItem from="1737977914378" duration="10000" />
+      <workItem from="1737980571632" duration="115000" />
+      <workItem from="1737980708597" duration="1303000" />
+      <workItem from="1737996943564" duration="2875000" />
+      <workItem from="1738001137294" duration="5861000" />
+      <workItem from="1738056291919" duration="4550000" />
+      <workItem from="1738081810912" duration="916000" />
+      <workItem from="1738091584443" duration="2528000" />
+      <workItem from="1738144377841" duration="1692000" />
+      <workItem from="1738164314765" duration="6304000" />
+      <workItem from="1738171572793" duration="151000" />
+      <workItem from="1738171849482" duration="6494000" />
+      <workItem from="1738178650086" duration="1202000" />
+      <workItem from="1738184152725" duration="4034000" />
+      <workItem from="1738223046731" duration="2913000" />
+      <workItem from="1738229219556" duration="380000" />
+      <workItem from="1738233832648" duration="1574000" />
+      <workItem from="1738236332880" duration="7464000" />
+      <workItem from="1738250552945" duration="14577000" />
+      <workItem from="1738322146501" duration="433000" />
+      <workItem from="1738322592949" duration="5596000" />
+      <workItem from="1738337173097" duration="12329000" />
+      <workItem from="1738407922549" duration="24013000" />
+      <workItem from="1738495021380" duration="17455000" />
+      <workItem from="1738567898937" duration="1169000" />
+      <workItem from="1738572183018" duration="13527000" />
+      <workItem from="1738606417828" duration="9314000" />
+      <workItem from="1738665683692" duration="2575000" />
+      <workItem from="1738671391373" duration="2235000" />
+      <workItem from="1738687977153" duration="9844000" />
+      <workItem from="1738742116422" duration="11258000" />
+      <workItem from="1738767111518" duration="61000" />
+      <workItem from="1738788634906" duration="4052000" />
+      <workItem from="1738843674310" duration="5062000" />
+      <workItem from="1738871172823" duration="4270000" />
+      <workItem from="1738924746186" duration="1465000" />
+      <workItem from="1738931898178" duration="326000" />
+      <workItem from="1738932617171" duration="821000" />
+    </task>
+    <task id="LOCAL-00001" summary="Proyecto al 50%">
+      <option name="closed" value="true" />
+      <created>1737918452514</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737918452514</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Proyecto al 55%">
+      <option name="closed" value="true" />
+      <created>1738008077593</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738008077593</updated>
+    </task>
+    <task id="LOCAL-00003" summary="En la web conecte la api y muestro una lista con las series.">
+      <option name="closed" value="true" />
+      <created>1738094224077</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738094224077</updated>
+    </task>
+    <task id="LOCAL-00004" summary="app casi lista, sólo falta implementar infinite scroll en inicio.page.html, categoria.page.html y buscador.page.html. la Api solo le queda el endpoint especial y la web esta al 30%">
+      <option name="closed" value="true" />
+      <created>1738265526877</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738265526877</updated>
+    </task>
+    <task id="LOCAL-00005" summary="app, web y api listas!!!">
+      <option name="closed" value="true" />
+      <created>1738874299744</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1738874299744</updated>
+    </task>
+    <task id="LOCAL-00006" summary="app, web y api listas!!!">
+      <option name="closed" value="true" />
+      <created>1738876781689</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738876781689</updated>
+    </task>
+    <task id="LOCAL-00007" summary="app, web y api listas!!!">
+      <option name="closed" value="true" />
+      <created>1738876900287</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1738876900287</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Proyecto al 50%" />
+    <MESSAGE value="Proyecto al 55%" />
+    <MESSAGE value="En la web conecte la api y muestro una lista con las series." />
+    <MESSAGE value="app casi lista, sólo falta implementar infinite scroll en inicio.page.html, categoria.page.html y buscador.page.html. la Api solo le queda el endpoint especial y la web esta al 30%" />
+    <MESSAGE value="app, web y api listas!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="app, web y api listas!!!" />
+  </component>
+</project>
